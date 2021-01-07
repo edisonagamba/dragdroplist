@@ -1,0 +1,19 @@
+<h2>Lista de juegos</h2>
+<hr>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="card mb-3" style="max-width: 540px;" *ngFor="let juego of juegos" cdkDrag>
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img [src]="juego.background_image" width="300" class="card-img" alt="...">
+            <img *cdkDragPreview [src]="juego.background_image" width="5-50"  alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{juego.name}}</h5>
+              <p class="card-text"><small class="text-muted">Release: {{juego.released}}</small></p>
+            </div>
+          </div>
+          <button class="btn btn-block btn-outline-success" [routerLink]="['/detalle',juego.slug]" routerLinkActive="router-link-active" >Ver detalle</button>
+        </div>
+      </div>
+</div>

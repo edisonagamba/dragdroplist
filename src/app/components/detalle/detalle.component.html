@@ -1,0 +1,21 @@
+<div class="card bg-dark text-white">
+    <img [src]="juego.background_image" class="card-img" alt="...">
+    <div class="card-img-overlay">
+      <h5 class="card-title">{{juego.name_original}}</h5>
+      <p class="card-text">Released: {{juego.released}}</p>
+    </div>
+  </div>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Game description</h1>
+      <div class="lead" [innerHtml]="juego.description"></div>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <video [src]="juego.clip.clip" controls></video>
+    <div class="card-body">
+      <h5 class="card-title">Developed by: {{juego.developers[0].name}} </h5>
+      <p class="card-text">{{juego.description_raw}}</p>
+      <p class="card-text"><small class="text-muted">Updated: {{juego.updated | date}}</small></p>
+    </div>
+  </div>
